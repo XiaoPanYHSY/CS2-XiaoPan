@@ -39,12 +39,13 @@ CS2-XiaoPan 是一个围绕 CS2 客户端数据读取与可视化展示的学习
 
 | 模块 | 说明 | 相关文件 |
 | --- | --- | --- |
-| ESP 透视 | 玩家、骨骼、血量、距离等信息绘制 | `Esp.py`、`XiaoPanSetting/espsetting.json`、`bonessetting.json` |
-| 自瞄 | 瞄准逻辑与平滑参数配置 | `XiaoPanSetting/` 下相关 json |
-| 投掷物助手 | 地图投掷点位、轨迹参考 | `maps/`、`web/map/` |
-| 扳机 | 命中触发逻辑 | `XiaoPanSetting/recoil.json` 等 |
-| 网页雷达 | 浏览器端雷达图与玩家位置展示 | `web/index.html`、`web/js/radar.js`、`web/map/` |
-| 地图资源 | 各地图雷达图与 meta 信息 | `maps/`、`web/map/` |
+| ESP 透视 | 玩家、骨骼、血量、距离等信息绘制 
+| 自瞄 | 瞄准逻辑与平滑参数配置 
+| 投掷物助手 | 地图投掷点位、轨迹参考
+| 扳机 | 命中触发逻辑
+| 自动压枪 | 压枪数据
+| 网页雷达 | 浏览器端雷达图与玩家位置展示 
+| 地图资源 | 各地图雷达图与 meta 信息 
 
 ---
 
