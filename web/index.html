@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1000" />
+    <title>小潘潘 实时雷达</title>
+    <link rel="stylesheet" href="css/radar.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="radar-container">
+            <img id="radar-map" src="../map/de_dust2/radar.png" alt="地图" />
+            <!-- 朝向线专用SVG画布 -->
+            <svg id="radar-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;">
+                <defs>
+                    <linearGradient id="flameGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+                        <stop offset="50%" stop-color="#00bfff" stop-opacity="0.7" />
+                        <stop offset="100%" stop-color="#0033ff" stop-opacity="0.3" />
+                    </linearGradient>
+
+                    <filter id="flameGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ffffff" flood-opacity="0.2" />
+                        <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#00bfff" flood-opacity="0.2" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <div class="rotate-buttons">
+                <div id="menu-buttons">
+                    <button id="rotate-left">⟲ 左旋转</button>
+                    <button id="rotate-right">⟳ 右旋转</button>
+                    <button id="choose-self-btn">选择自己玩家</button>
+                    <button id="toggle-enemies-btn">只显示敌人</button>
+                    <button id="hide-menu-btn">隐藏菜单</button>
+                    <div id="self-select-panel" style="display: none; margin-top: 10px;">
+                        <select id="player-select">
+                            <option value="">请选择玩家</option>
+                        </select>
+                        <button onclick="confirmSelfPlayer()">确认</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h2>小潘潘 实时雷达</h2>
+                <div class="status">
+                    <p>连接状态: <span id="connection-status">未连接</span></p>
+                    <p>玩家数量: <span id="player-count">0</span></p>
+                    <p>最后更新: <span id="last-update">从未</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/radar.js"></script>
+</body>
+
+</html>

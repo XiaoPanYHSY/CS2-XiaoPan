@@ -1,0 +1,239 @@
+/* 页面整体 */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #121212;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    /* ⬅️ 关键：上下左右居中 */
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+#radar-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* ⬅️ 关键：撑满父级 body 的剩余高度 */
+}
+
+/* 雷达图容器，保持正方形，自动缩放 */
+.radar-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #1e1e1e;
+}
+
+#radar-map {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* 保持比例 */
+    display: block;
+}
+
+/* 按钮容器 */
+.rotate-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    object-fit: contain;
+    /* 保持比例 */
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rotate-buttons button {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.rotate-buttons button:hover {
+    background-color: #555;
+}
+
+/* 信息面板 */
+.info-panel {
+    background-color: rgba(37, 37, 37, 0.95);
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    min-height: 90px;
+}
+
+/* 标题 */
+h2 {
+    color: #448aff;
+    margin: 0 10px 0 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* 状态块和玩家列表通用样式 */
+.status,
+#players-list {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    color: #e0e0e0;
+    min-width: 180px;
+    flex-shrink: 0;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+h3 {
+    color: #448aff;
+    margin: 0 10px 0 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* 玩家点位样式 */
+.player {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    border: 2px solid white;
+}
+
+.team-2 {
+    background-color: #ff5252;
+    border: 2px solid #ff8a80;
+}
+
+.team-3 {
+    background-color: #448aff;
+    border: 2px solid #82b1ff;
+}
+
+.player-name {
+    position: absolute;
+    font-size: 12px;
+    color: white;
+    text-shadow: 0 0 3px black;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+    line-height: 1.2;
+}
+
+/* 玩家详细信息框 */
+.player-info {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* 动画效果 */
+@keyframes flamePulse {
+    0%,
+    100% {
+        stroke-width: 3;
+        opacity: 1;
+        filter: url(#flameGlow);
+    }
+
+    50% {
+        stroke-width: 5;
+        opacity: 0.7;
+        filter: url(#flameGlow);
+    }
+}
+
+@keyframes flameWobble {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(0.3deg);
+    }
+
+    75% {
+        transform: rotate(-0.3deg);
+    }
+}
+
+.flame-line {
+    animation: flamePulse 1.5s infinite ease-in-out,
+        flameWobble 2s infinite ease-in-out;
+    transform-origin: center;
+}
+
+/* ----------- 响应式适配（手机专用） ----------- */
+@media (max-width: 768px) {
+    .info-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .rotate-buttons {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .rotate-buttons button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .player-name {
+        font-size: 10px;
+    }
+
+    .status,
+    #players-list {
+        min-width: 100%;
+        max-height: 100px;
+    }
+}
+
+/* 应用于路径 */
+.flame-line {
+    animation: flamePulse 1.5s infinite ease-in-out,
+        flameWobble 2s infinite ease-in-out;
+    transform-origin: center;
+} 

@@ -1,0 +1,110 @@
+{
+    "player_color": [
+        0,
+        255,
+        0,
+        255
+    ],
+    "weapon_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "bones_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "hp_color": [
+        0,
+        0,
+        255,
+        255
+    ],
+    "armor_color": [
+        255,
+        191,
+        0,
+        255
+    ],
+    "esp_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "money_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "state_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "scoped_color": [
+        1,
+        1,
+        2,
+        2
+    ],
+    "c4time_color": [
+        0,
+        0,
+        255,
+        255
+    ],
+    "head_bones_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "player_radar_color": [
+        255,
+        150,
+        0,
+        255
+    ],
+    "enemy_radar_color": [
+        0,
+        0,
+        255,
+        255
+    ],
+    "player_angle_color": [
+        0,
+        255,
+        0,
+        255
+    ],
+    "enemy_angle_color": [
+        255,
+        255,
+        255,
+        255
+    ],
+    "grenade_points_color": [
+        255,
+        200,
+        0,
+        255
+    ],
+    "grenade_throw_color": [
+        0,
+        255,
+        0,
+        255
+    ],
+    "round_test_color": [
+        255,
+        170,
+        0,
+        255
+    ]
+}

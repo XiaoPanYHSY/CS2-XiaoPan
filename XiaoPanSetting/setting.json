@@ -1,0 +1,18 @@
+{
+    "is_paused": true,
+    "is_box_enabled": false,
+    "is_skeleton_enabled": true,
+    "is_money_enabled": true,
+    "is_weapon_enabled": true,
+    "is_status_enabled": true,
+    "is_health_enabled": true,
+    "is_armor_enabled": true,
+    "is_c4time_enabled": true,
+    "is_scoped_enabled": true,
+    "is_player_enabled": true,
+    "is_radar_enabled": true,
+    "is_headbox_enabled": true,
+    "is_grenade_points_enabled": true,
+    "is_grenade_throw_enabled": true,
+    "is_round_test_enabled": false
+}

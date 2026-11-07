@@ -1,0 +1,15 @@
+{
+    "serial_port": "COM9",
+    "baud_rate": 9600,
+    "shoot_delay_min": 0.021,
+    "shoot_delay_max": 0.023,
+    "shoot_interval_min": 0.07,
+    "shoot_interval_max": 0.08,
+    "recoil_sensitivity": 1.0,
+    "CIRCLE_RADIUS": 30,
+    "AIM_SMOOTHING": 7.0,
+    "AIM_STEP_DELAY": 0.0,
+    "recoil_enabled": true,
+    "aimbot_enabled": false,
+    "aimbot_move_enabled": false
+}

@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "button": {
+        "default": {
+            "font": "./XiaoPanSetting/华文琥珀.ttf",
+            "font_size": 16,
+            "colours": {
+                "normal_text": "#FFFFFF",
+                "hovered_text": "#FFDD00",
+                "active_text": "#FFAA00",
+                "normal_bg": "#000000",
+                "hovered_bg": "#333333",
+                "active_bg": "#555555"
+            }
+        }
+    }
+}
